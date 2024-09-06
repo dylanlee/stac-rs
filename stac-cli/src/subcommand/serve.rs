@@ -5,8 +5,8 @@ use tokio::{net::TcpListener, sync::mpsc::Sender};
 impl Subcommand {
     #[allow(unused_variables)]
     pub(crate) async fn serve(args: ServeArgs, sender: Sender<Output>) -> Result<()> {
-        let root = "http://127.0.0.1:7822";
-        let addr = "127.0.0.1:7822";
+        let root = "http://0.0.0.0:7822";
+        let addr = "0.0.0.0:7822";
         if let Some(pgstac) = args.pgstac.as_deref() {
             #[cfg(feature = "pgstac")]
             {
